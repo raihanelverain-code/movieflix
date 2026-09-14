@@ -1,0 +1,3022 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MovieFlix - Movies & TV Shows</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     MOBILE MENU BUTTON
+========================================================= -->
+
+<button class="mobile-menu-btn" onclick="toggleSidebar()">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <!-- Logo -->
+    <div class="side-logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-play"></i>
+        </div>
+
+        <span>Movie<span class="logo-green">Flix</span></span>
+    </div>
+
+
+    <!-- Language -->
+    <div class="language-box">
+        <i class="fa-solid fa-globe"></i>
+        <span>বাংলা</span>
+        <i class="fa-solid fa-chevron-down"></i>
+    </div>
+
+
+    <!-- Sidebar Menu -->
+    <nav class="side-menu">
+
+        <a href="#" class="active">
+            <i class="fa-solid fa-house"></i>
+            <span>হোম</span>
+        </a>
+
+        <a href="#tvshows">
+            <i class="fa-solid fa-tv"></i>
+            <span>TV Show</span>
+        </a>
+
+        <a href="#movies">
+            <i class="fa-solid fa-film"></i>
+            <span>Movie</span>
+        </a>
+
+        <a href="#midnight">
+            <i class="fa-solid fa-face-kiss-wink-heart"></i>
+            <span>Midnight</span>
+        </a>
+
+        <a href="#animation">
+            <i class="fa-solid fa-cat"></i>
+            <span>Animation</span>
+        </a>
+
+        <a href="#most-watched">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Most Watched</span>
+        </a>
+
+        <a href="#app">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>MovieFlix App</span>
+        </a>
+
+        <a href="#mac">
+            <i class="fa-brands fa-apple"></i>
+            <span>MovieFlix for Mac</span>
+        </a>
+
+        <a href="#pc">
+            <i class="fa-brands fa-windows"></i>
+            <span>MovieFlix PC</span>
+        </a>
+
+        <a href="#tvapk">
+            <i class="fa-solid fa-tv"></i>
+            <span>MovieFlix TV APK</span>
+        </a>
+
+        <a href="#download">
+            <i class="fa-solid fa-download"></i>
+            <span>Download</span>
+        </a>
+
+        <a href="#games">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Games</span>
+        </a>
+
+        <a href="#old">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span>Old MovieFlix</span>
+        </a>
+
+        <a href="#premium" class="premium-link">
+            <i class="fa-solid fa-crown"></i>
+            <span>Premium Center</span>
+        </a>
+
+    </nav>
+
+
+    <!-- Sidebar Bottom -->
+    <div class="sidebar-bottom">
+
+        <div class="download-box">
+
+            <small>Get MovieFlix</small>
+
+            <strong>
+                <i class="fa-solid fa-mobile-screen"></i>
+                MovieFlix App
+            </strong>
+
+            <button onclick="showMessage('অ্যাপ ডাউনলোড অপশন শীঘ্রই আসবে')">
+                Download
+            </button>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN AREA
+========================================================= -->
+
+<div class="main-content">
+
+
+<!-- =========================================================
+     TOP HEADER
+========================================================= -->
+
+<header class="top-header">
+
+    <!-- Mobile/Logo -->
+    <div class="mobile-logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-play"></i>
+        </div>
+
+        <span>
+            Movie<span class="logo-green">Flix</span>
+        </span>
+    </div>
+
+
+    <!-- Search -->
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="মুভি / TV Show খুঁজুন..."
+            onkeyup="searchMovies()"
+        >
+
+        <button onclick="searchMovies()">
+            সার্চ
+        </button>
+
+    </div>
+
+
+    <!-- Header Buttons -->
+    <div class="header-buttons">
+
+        <button class="premium-btn"
+                onclick="showMessage('Premium Center')">
+
+            <i class="fa-solid fa-crown"></i>
+            Premium
+
+        </button>
+
+
+        <button class="gpt-btn"
+                onclick="showMessage('MovieFlix AI')">
+
+            <i class="fa-solid fa-message"></i>
+            MovieFlix GPT
+
+        </button>
+
+
+        <button class="download-btn"
+                onclick="showMessage('Download App')">
+
+            <i class="fa-solid fa-mobile-screen"></i>
+            Download App
+
+        </button>
+
+
+        <button class="login-btn"
+                onclick="showMessage('Login')">
+
+            <i class="fa-solid fa-user"></i>
+            Login
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+
+<section class="hero-section">
+
+    <button class="hero-arrow hero-left"
+            onclick="previousHero()">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            <i class="fa-solid fa-film"></i>
+            Featured
+        </span>
+
+        <h1 id="heroTitle">
+            The Revolutionaries
+        </h1>
+
+        <div class="hero-meta">
+
+            <span>
+                <i class="fa-solid fa-calendar"></i>
+                2026
+            </span>
+
+            <span>
+                <i class="fa-solid fa-film"></i>
+                Movie
+            </span>
+
+            <span>
+                Action, Drama
+            </span>
+
+        </div>
+
+        <p id="heroDescription">
+            আপনার পছন্দের নতুন মুভি এবং জনপ্রিয় TV Show
+            এক জায়গায় খুঁজে দেখুন।
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#movies" class="btn">
+                <i class="fa-solid fa-play"></i>
+                এখনই দেখুন
+            </a>
+
+            <button class="info-btn"
+                    onclick="showMessage('Movie Details')">
+
+                <i class="fa-solid fa-circle-info"></i>
+                বিস্তারিত
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <button class="hero-arrow hero-right"
+            onclick="nextHero()">
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
+
+
+    <!-- Hero Dots -->
+
+    <div class="hero-dots" id="heroDots">
+
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AD / PROMOTION
+========================================================= -->
+
+<div class="promotion-banner">
+
+    <div>
+
+        <strong>
+            🎬 MovieFlix
+        </strong>
+
+        <span>
+            নতুন মুভি ও TV Show আবিষ্কার করুন
+        </span>
+
+    </div>
+
+    <button onclick="showMessage('Explore Movies')">
+        Explore Now
+    </button>
+
+</div>
+
+
+
+<!-- =========================================================
+     CONTENT
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     TRENDING NOW
+========================================================= -->
+
+<section class="movie-section" id="movies">
+
+    <div class="section-header">
+
+        <h2>
+            🔥 Trending Now
+        </h2>
+
+        <a href="#">
+            More
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="movie-row">
+
+
+        <!-- MOVIE 1 -->
+
+        <article class="movie-card"
+                 data-title="The Revolutionaries">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80"
+                    alt="The Revolutionaries">
+
+                <span class="language-badge">
+                    English
+                </span>
+
+                <span class="free-badge">
+                    Free
+                </span>
+
+                <button class="play-button"
+                        onclick="watchMovie('The Revolutionaries')">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    The Revolutionaries
+                </h3>
+
+                <div class="movie-details">
+
+                    <span>
+                        2026
+                    </span>
+
+                    <span>
+                        ⭐ 8.5
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MOVIE 2 -->
+
+        <article class="movie-card"
+                 data-title="Ghamasaan">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80"
+                    alt="Ghamasaan">
+
+                <span class="language-badge">
+                    Hindi
+                </span>
+
+                <button class="play-button"
+                        onclick="watchMovie('Ghamasaan')">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Ghamasaan
+                </h3>
+
+                <div class="movie-details">
+
+                    <span>
+                        2026
+                    </span>
+
+                    <span>
+                        ⭐ 8.1
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MOVIE 3 -->
+
+        <article class="movie-card"
+                 data-title="Viswanath">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80"
+                    alt="Viswanath">
+
+                <span class="language-badge">
+                    Hindi
+                </span>
+
+                <span class="free-badge">
+                    Limited Free
+                </span>
+
+                <button class="play-button"
+                        onclick="watchMovie('Viswanath')">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Viswanath
+                </h3>
+
+                <div class="movie-details">
+
+                    <span>
+                        2026
+                    </span>
+
+                    <span>
+                        ⭐ 7.9
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MOVIE 4 -->
+
+        <article class="movie-card"
+                 data-title="Chumbak">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80"
+                    alt="Chumbak">
+
+                <span class="language-badge">
+                    Hindi
+                </span>
+
+                <button class="play-button"
+                        onclick="watchMovie('Chumbak')">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Chumbak
+                </h3>
+
+                <div class="movie-details">
+
+                    <span>
+                        2026
+                    </span>
+
+                    <span>
+                        ⭐ 7.8
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MOVIE 5 -->
+
+        <article class="movie-card"
+                 data-title="Crew Girl">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80"
+                    alt="Crew Girl">
+
+                <span class="language-badge">
+                    English
+                </span>
+
+                <button class="play-button"
+                        onclick="watchMovie('Crew Girl')">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Crew Girl
+                </h3>
+
+                <div class="movie-details">
+
+                    <span>
+                        2026
+                    </span>
+
+                    <span>
+                        ⭐ 8.0
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HOT SHORT TV
+========================================================= -->
+
+<section class="movie-section" id="tvshows">
+
+    <div class="section-header">
+
+        <h2>
+            🔥 Hot Short TV
+        </h2>
+
+        <a href="#">
+            More
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="movie-row">
+
+
+        <!-- SHORT 1 -->
+
+        <article class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80"
+                    alt="Where is Home">
+
+                <span class="language-badge">
+                    Drama
+                </span>
+
+                <button class="play-button"
+                        onclick="watchMovie('Where is Home')">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Where is Home
+                </h3>
+
+                <div class="movie-details">
+
+                    <span>
+                        Short TV
+                    </span>
+
+                    <span>
+                        ⭐ 8.2
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SHORT 2 -->
+
+        <article class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80"
+                    alt="Little Poor Thing">
+
+                <span class="language-badge">
+                    Drama
+                </span>
+
+                <button class="play-button"
+                        onclick="watchMovie('Little Poor Thing')">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Little Poor Thing
+                </h3>
+
+                <div class="movie-details">
+
+                    <span>
+                        Short TV
+                    </span>
+
+                    <span>
+                        ⭐ 8.4
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SHORT 3 -->
+
+        <article class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80"
+                    alt="Daughter Of The Secret Tycoon">
+
+                <span class="language-badge">
+                    Drama
+                </span>
+
+                <button class="play-button"
+                        onclick="watchMovie('Daughter Of The Secret Tycoon')">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Daughter Of The Secret Tycoon
+                </h3>
+
+                <div class="movie-details">
+
+                    <span>
+                        Short TV
+                    </span>
+
+                    <span>
+                        ⭐ 8.6
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SHORT 4 -->
+
+        <article class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=500&q=80"
+                    alt="The Mysterious Master Chef">
+
+                <span class="language-badge">
+                    Comedy
+                </span>
+
+                <button class="play-button"
+                        onclick="watchMovie('The Mysterious Master Chef')">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    The Mysterious Master Chef
+                </h3>
+
+                <div class="movie-details">
+
+                    <span>
+                        Short TV
+                    </span>
+
+                    <span>
+                        ⭐ 8.1
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SHORT 5 -->
+
+        <article class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80"
+                    alt="Dragon Traveling">
+
+                <span class="language-badge">
+                    Action
+                </span>
+
+                <button class="play-button"
+                        onclick="watchMovie('Dragon Traveling')">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Dragon Traveling
+                </h3>
+
+                <div class="movie-details">
+
+                    <span>
+                        Short TV
+                    </span>
+
+                    <span>
+                        ⭐ 8.3
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MORE TO DISCOVER
+========================================================= -->
+
+<section class="discover-section">
+
+    <div class="section-header">
+
+        <h2>
+            More to Discover
+        </h2>
+
+        <a href="#">
+            More
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="discover-grid">
+
+
+        <div class="discover-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80"
+                alt="Movie Discovery">
+
+            <div class="discover-content">
+
+                <h3>
+                    Movie Discovery
+                </h3>
+
+                <p>
+                    নতুন মুভি আবিষ্কার করুন
+                </p>
+
+                <a href="#">
+                    Explore
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="discover-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=80"
+                alt="Web Series">
+
+            <div class="discover-content">
+
+                <h3>
+                    Web Series
+                </h3>
+
+                <p>
+                    জনপ্রিয় ওয়েব সিরিজ দেখুন
+                </p>
+
+                <a href="#">
+                    Explore
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="discover-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=800&q=80"
+                alt="Top Movies">
+
+            <div class="discover-content">
+
+                <h3>
+                    Top Movies
+                </h3>
+
+                <p>
+                    জনপ্রিয় সিনেমার তালিকা
+                </p>
+
+                <a href="#">
+                    Explore
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="discover-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80"
+                alt="Online Watch">
+
+            <div class="discover-content">
+
+                <h3>
+                    Watch Online
+                </h3>
+
+                <p>
+                    আপনার পছন্দের কনটেন্ট খুঁজুন
+                </p>
+
+                <a href="#">
+                    Explore
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TOP 20
+========================================================= -->
+
+<section class="movie-section" id="most-watched">
+
+    <div class="section-header">
+
+        <h2>
+            🔥 TOP 20
+        </h2>
+
+        <a href="#">
+            More
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="movie-row">
+
+
+        <!-- TOP 1 -->
+
+        <article class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80"
+                    alt="Top Movie 1">
+
+                <span class="rank-number">
+                    01
+                </span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Top Movie One
+                </h3>
+
+                <div class="movie-details">
+                    <span>2026</span>
+                    <span>⭐ 9.0</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- TOP 2 -->
+
+        <article class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80"
+                    alt="Top Movie 2">
+
+                <span class="rank-number">
+                    02
+                </span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Top Movie Two
+                </h3>
+
+                <div class="movie-details">
+                    <span>2026</span>
+                    <span>⭐ 8.9</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- TOP 3 -->
+
+        <article class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80"
+                    alt="Top Movie 3">
+
+                <span class="rank-number">
+                    03
+                </span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Top Movie Three
+                </h3>
+
+                <div class="movie-details">
+                    <span>2026</span>
+                    <span>⭐ 8.8</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- TOP 4 -->
+
+        <article class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80"
+                    alt="Top Movie 4">
+
+                <span class="rank-number">
+                    04
+                </span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Top Movie Four
+                </h3>
+
+                <div class="movie-details">
+                    <span>2026</span>
+                    <span>⭐ 8.7</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- TOP 5 -->
+
+        <article class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=500&q=80"
+                    alt="Top Movie 5">
+
+                <span class="rank-number">
+                    05
+                </span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Top Movie Five
+                </h3>
+
+                <div class="movie-details">
+                    <span>2026</span>
+                    <span>⭐ 8.6</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     GENRE SECTION
+========================================================= -->
+
+<section class="genre-section" id="animation">
+
+    <div class="section-header">
+
+        <h2>
+            Browse by Genre
+        </h2>
+
+    </div>
+
+
+    <div class="genre-list">
+
+        <a href="#">Action</a>
+
+        <a href="#">Adventure</a>
+
+        <a href="#">Comedy</a>
+
+        <a href="#">Drama</a>
+
+        <a href="#">Romance</a>
+
+        <a href="#">Thriller</a>
+
+        <a href="#">Horror</a>
+
+        <a href="#">Animation</a>
+
+        <a href="#">Sci-Fi</a>
+
+        <a href="#">Fantasy</a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-play"></i>
+        </div>
+
+        <strong>
+            Movie<span>Flix</span>
+        </strong>
+
+    </div>
+
+
+    <p>
+        আপনার পছন্দের মুভি ও TV Show খুঁজে আবিষ্কার করুন।
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="#">Home</a>
+
+        <a href="#">Movies</a>
+
+        <a href="#">TV Shows</a>
+
+        <a href="#">About</a>
+
+        <a href="#">Contact</a>
+
+        <a href="#">Privacy</a>
+
+    </div>
+
+
+    <div class="social-links">
+
+        <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-telegram"></i>
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 MovieFlix. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     NOTIFICATION
+========================================================= -->
+
+<div id="notification" class="notification">
+    <span id="notificationText"></span>
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+function toggleSidebar() {
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    sidebar.classList.toggle("show");
+
+}
+
+
+
+/* =========================================
+   NOTIFICATION
+========================================= */
+
+function showMessage(message) {
+
+    const notification =
+        document.getElementById("notification");
+
+    const text =
+        document.getElementById("notificationText");
+
+    text.innerText = message;
+
+    notification.classList.add("show");
+
+    setTimeout(function () {
+
+        notification.classList.remove("show");
+
+    }, 2500);
+
+}
+
+
+
+/* =========================================
+   WATCH MOVIE
+========================================= */
+
+function watchMovie(movieName) {
+
+    showMessage(
+        movieName + " এর বিস্তারিত পেজ শীঘ্রই আসবে"
+    );
+
+}
+
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+function searchMovies() {
+
+    const input =
+        document.getElementById("searchInput");
+
+    const searchText =
+        input.value.toLowerCase().trim();
+
+    const movies =
+        document.querySelectorAll(".movie-card");
+
+    movies.forEach(function(movie) {
+
+        const title =
+            movie.getAttribute("data-title") ||
+            movie.querySelector("h3")?.innerText ||
+            "";
+
+        if (
+            title
+            .toLowerCase()
+            .includes(searchText)
+        ) {
+
+            movie.style.display = "";
+
+        } else {
+
+            movie.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+
+/* =========================================
+   HERO SLIDER
+========================================= */
+
+const heroData = [
+
+    {
+        title: "The Revolutionaries",
+        description:
+        "অ্যাকশন, ড্রামা এবং অ্যাডভেঞ্চারে ভরা নতুন গল্প।"
+    },
+
+    {
+        title: "The Movie World",
+        description:
+        "আপনার পছন্দের সেরা সিনেমা এক জায়গায় আবিষ্কার করুন।"
+    },
+
+    {
+        title: "Latest Movies",
+        description:
+        "নতুন সিনেমা এবং জনপ্রিয় কনটেন্টের আপডেট পান।"
+    },
+
+    {
+        title: "Best TV Shows",
+        description:
+        "জনপ্রিয় TV Show এবং Short TV আবিষ্কার করুন।"
+    },
+
+    {
+        title: "Action Collection",
+        description:
+        "সেরা অ্যাকশন সিনেমার কালেকশন দেখুন।"
+    }
+
+];
+
+
+let currentHero = 0;
+
+
+
+function updateHero() {
+
+    const title =
+        document.getElementById("heroTitle");
+
+    const description =
+        document.getElementById("heroDescription");
+
+    title.innerText =
+        heroData[currentHero].title;
+
+    description.innerText =
+        heroData[currentHero].description;
+
+
+    const dots =
+        document.querySelectorAll(".dot");
+
+    dots.forEach(function(dot, index) {
+
+        dot.classList.remove("active");
+
+        if(index === currentHero) {
+
+            dot.classList.add("active");
+
+        }
+
+    });
+
+}
+
+
+
+function nextHero() {
+
+    currentHero++;
+
+    if(currentHero >= heroData.length) {
+
+        currentHero = 0;
+
+    }
+
+    updateHero();
+
+}
+
+
+
+function previousHero() {
+
+    currentHero--;
+
+    if(currentHero < 0) {
+
+        currentHero =
+            heroData.length - 1;
+
+    }
+
+    updateHero();
+
+}
+
+
+
+/* =========================================
+   AUTO HERO SLIDER
+========================================= */
+
+setInterval(function() {
+
+    nextHero();
+
+}, 5000);
+
+
+
+/* =========================================
+   CLOSE SIDEBAR WHEN CLICKING MAIN AREA
+========================================= */
+
+document
+    .querySelector(".main-content")
+    .addEventListener("click", function() {
+
+        if(window.innerWidth <= 900) {
+
+            document
+                .getElementById("sidebar")
+                .classList.remove("show");
+
+        }
+
+    });
+
+
+</script>
+
+
+<!-- =========================================================
+     EXTRA STYLE FOR SIDEBAR & NEW COMPONENTS
+========================================================= -->
+
+<style>
+
+/* ===============================
+   SIDEBAR
+================================ */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 220px;
+    height: 100vh;
+
+    background: #101217;
+
+    border-right: 1px solid #252932;
+
+    padding: 20px 12px;
+
+    overflow-y: auto;
+
+    z-index: 2000;
+
+}
+
+
+.side-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    padding: 8px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.logo-icon {
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #19e68c;
+
+    color: #07120d;
+
+    border-radius: 10px;
+
+}
+
+
+.logo-green {
+
+    color: #19e68c;
+
+}
+
+
+.language-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.language-box i:last-child {
+
+    margin-left: auto;
+
+    font-size: 10px;
+
+}
+
+
+.side-menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.side-menu a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    color: #bfc1c7;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: .2s;
+
+}
+
+
+.side-menu a i {
+
+    width: 20px;
+
+    text-align: center;
+
+}
+
+
+.side-menu a:hover,
+.side-menu a.active {
+
+    background: #292c33;
+
+    color: #19e68c;
+
+}
+
+
+.side-menu .premium-link {
+
+    color: #ffe18a;
+
+    margin-top: 5px;
+
+}
+
+
+.sidebar-bottom {
+
+    margin-top: 20px;
+
+}
+
+
+.download-box {
+
+    background: #191d24;
+
+    border: 1px solid #2b3039;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.download-box small {
+
+    color: #888;
+
+}
+
+
+.download-box strong {
+
+    font-size: 12px;
+
+}
+
+
+.download-box button {
+
+    border: 0;
+
+    background: #19e68c;
+
+    padding: 8px;
+
+    border-radius: 6px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+
+.main-content {
+
+    margin-left: 220px;
+
+    min-height: 100vh;
+
+}
+
+
+/* ===============================
+   TOP HEADER
+================================ */
+
+.top-header {
+
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 10px 20px;
+
+    background: #101217;
+
+    border-bottom: 1px solid #242730;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+}
+
+
+.mobile-logo {
+
+    display: none;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-weight: 800;
+
+}
+
+
+.header-buttons {
+
+    display: flex;
+
+    gap: 7px;
+
+}
+
+
+.header-buttons button {
+
+    border: none;
+
+    padding: 9px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+}
+
+
+.premium-btn {
+
+    background: #f5dd8b;
+
+    color: #25200c;
+
+}
+
+
+.gpt-btn {
+
+    background: #28d8b4;
+
+    color: #06231d;
+
+}
+
+
+.download-btn {
+
+    background: #19e68c;
+
+    color: #062116;
+
+}
+
+
+.login-btn {
+
+    background: #292d34;
+
+    color: #ddd;
+
+}
+
+
+
+/* ===============================
+   HERO
+================================ */
+
+.hero-section {
+
+    height: 400px;
+
+    margin: 15px 20px;
+
+    border-radius: 12px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,7,12,.96),
+            rgba(5,7,12,.6),
+            rgba(5,7,12,.15)
+        ),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+
+}
+
+
+.hero-content {
+
+    padding-left: 50px;
+
+    max-width: 650px;
+
+}
+
+
+.hero-tag {
+
+    color: #19e68c;
+
+    font-size: 13px;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 45px;
+
+    margin: 12px 0;
+
+}
+
+
+.hero-meta {
+
+    display: flex;
+
+    gap: 15px;
+
+    color: #bbb;
+
+    font-size: 13px;
+
+}
+
+
+.hero-content p {
+
+    color: #ccc;
+
+    line-height: 1.6;
+
+    margin: 15px 0 20px;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.hero-buttons .btn {
+
+    background: #19e68c;
+
+    color: #06170f;
+
+}
+
+
+.info-btn {
+
+    border: 1px solid #555;
+
+    background: #24272d;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+}
+
+
+.hero-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: 1px solid #555;
+
+    background: rgba(0,0,0,.6);
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 3;
+
+}
+
+
+.hero-left {
+
+    left: 15px;
+
+}
+
+
+.hero-right {
+
+    right: 15px;
+
+}
+
+
+.hero-dots {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    right: 30px;
+
+    display: flex;
+
+    gap: 7px;
+
+}
+
+
+.dot {
+
+    width: 8px;
+    height: 8px;
+
+    background: #777;
+
+    border-radius: 50%;
+
+}
+
+
+.dot.active {
+
+    width: 25px;
+
+    border-radius: 10px;
+
+    background: #fff;
+
+}
+
+
+
+/* ===============================
+   PROMOTION
+================================ */
+
+.promotion-banner {
+
+    margin: 0 20px 20px;
+
+    background: #171b23;
+
+    border: 1px solid #282d36;
+
+    padding: 15px 20px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.promotion-banner div {
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+
+}
+
+
+.promotion-banner span {
+
+    color: #999;
+
+    font-size: 13px;
+
+}
+
+
+.promotion-banner button {
+
+    border: 0;
+
+    background: #19e68c;
+
+    padding: 9px 16px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+}
+
+
+
+/* ===============================
+   SECTIONS
+================================ */
+
+.movie-section,
+.discover-section,
+.genre-section {
+
+    padding: 0 20px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.section-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+
+}
+
+
+.section-header h2 {
+
+    font-size: 21px;
+
+}
+
+
+.section-header a {
+
+    color: #999;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+}
+
+
+
+/* ===============================
+   MOVIE ROW
+================================ */
+
+.movie-row {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 13px;
+
+}
+
+
+.movie-card {
+
+    min-width: 0;
+
+}
+
+
+.poster {
+
+    position: relative;
+
+    height: 245px;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background: #181b21;
+
+}
+
+
+.poster img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .3s;
+
+}
+
+
+.movie-card:hover .poster img {
+
+    transform: scale(1.05);
+
+}
+
+
+.language-badge,
+.free-badge {
+
+    position: absolute;
+
+    top: 7px;
+
+    padding: 4px 7px;
+
+    border-radius: 4px;
+
+    background: rgba(0,0,0,.7);
+
+    font-size: 10px;
+
+}
+
+
+.language-badge {
+
+    left: 7px;
+
+}
+
+
+.free-badge {
+
+    right: 7px;
+
+    background: #19e68c;
+
+    color: #06170f;
+
+}
+
+
+.play-button {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%,-50%) scale(.7);
+
+    opacity: 0;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #19e68c;
+
+    color: #07120d;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.movie-card:hover .play-button {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+}
+
+
+.movie-info {
+
+    padding: 8px 2px;
+
+}
+
+
+.movie-info h3 {
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    margin-bottom: 6px;
+
+}
+
+
+.movie-details {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #888;
+
+    font-size: 11px;
+
+}
+
+
+.rank-number {
+
+    position: absolute;
+
+    left: 8px;
+
+    bottom: 7px;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    color: white;
+
+    text-shadow: 2px 2px 5px #000;
+
+}
+
+
+
+/* ===============================
+   DISCOVER
+================================ */
+
+.discover-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+
+}
+
+
+.discover-card {
+
+    position: relative;
+
+    min-height: 230px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    border: 1px solid #292e37;
+
+}
+
+
+.discover-card img {
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    inset: 0;
+
+    object-fit: cover;
+
+}
+
+
+.discover-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.95)
+        );
+
+}
+
+
+.discover-content {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 15px;
+
+    right: 15px;
+
+    z-index: 2;
+
+}
+
+
+.discover-content h3 {
+
+    font-size: 16px;
+
+}
+
+
+.discover-content p {
+
+    font-size: 11px;
+
+    color: #aaa;
+
+    margin: 5px 0;
+
+}
+
+
+.discover-content a {
+
+    color: #19e68c;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+}
+
+
+
+/* ===============================
+   GENRE
+================================ */
+
+.genre-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.genre-list a {
+
+    padding: 9px 17px;
+
+    background: #191d24;
+
+    border: 1px solid #292e36;
+
+    border-radius: 20px;
+
+    color: #bbb;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+}
+
+
+.genre-list a:hover {
+
+    background: #19e68c;
+
+    color: #07120d;
+
+}
+
+
+
+/* ===============================
+   FOOTER
+================================ */
+
+footer {
+
+    background: #090b0f;
+
+    border-top: 1px solid #242730;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+    font-size: 20px;
+
+}
+
+
+.footer-logo span {
+
+    color: #19e68c;
+
+}
+
+
+footer p {
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin: 20px 0;
+
+    flex-wrap: wrap;
+
+}
+
+
+.footer-links a {
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+}
+
+
+.social-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.social-links a {
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #191d24;
+
+    color: #aaa;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+/* ===============================
+   NOTIFICATION
+================================ */
+
+.notification {
+
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    background: #19e68c;
+
+    color: #07120d;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transform: translateY(100px);
+
+    opacity: 0;
+
+    transition: .3s;
+
+    z-index: 5000;
+
+}
+
+
+.notification.show {
+
+    transform: translateY(0);
+
+    opacity: 1;
+
+}
+
+
+
+/* ===============================
+   MOBILE MENU BUTTON
+================================ */
+
+.mobile-menu-btn {
+
+    display: none;
+
+    position: fixed;
+
+    left: 10px;
+    top: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    background: #191d24;
+
+    color: white;
+
+    border: 1px solid #333;
+
+    border-radius: 8px;
+
+    z-index: 4000;
+
+}
+
+
+
+/* ===============================
+   TABLET
+================================ */
+
+@media(max-width: 1100px) {
+
+    .header-buttons button {
+
+        padding: 8px;
+
+    }
+
+    .movie-row {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+    }
+
+    .discover-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media(max-width: 800px) {
+
+    .sidebar {
+
+        transform: translateX(-100%);
+
+        transition: .3s;
+
+    }
+
+
+    .sidebar.show {
+
+        transform: translateX(0);
+
+    }
+
+
+    .main-content {
+
+        margin-left: 0;
+
+    }
+
+
+    .mobile-menu-btn {
+
+        display: block;
+
+    }
+
+
+    .top-header {
+
+        padding-left: 60px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .mobile-logo {
+
+        display: flex;
+
+    }
+
+
+    .top-header .search-box {
+
+        order: 3;
+
+        width: 100%;
+
+    }
+
+
+    .header-buttons {
+
+        display: none;
+
+    }
+
+
+    .hero-section {
+
+        height: 330px;
+
+        margin: 10px;
+
+    }
+
+
+    .hero-content {
+
+        padding-left: 30px;
+
+        padding-right: 30px;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .hero-meta {
+
+        gap: 8px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .movie-section,
+    .discover-section,
+    .genre-section {
+
+        padding: 0 10px;
+
+    }
+
+
+    .movie-row {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 9px;
+
+    }
+
+
+    .poster {
+
+        height: 190px;
+
+    }
+
+
+    .discover-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .promotion-banner {
+
+        margin: 10px;
+
+    }
+
+}
+
+
+
+/* ===============================
+   SMALL MOBILE
+================================ */
+
+@media(max-width: 450px) {
+
+    .movie-row {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .poster {
+
+        height: 235px;
+
+    }
+
+
+    .discover-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .hero-content p {
+
+        font-size: 12px;
+
+    }
+
+
+    .promotion-banner div {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 3px;
+
+    }
+
+}
+
+</style>
+
+</body>
+</html>
